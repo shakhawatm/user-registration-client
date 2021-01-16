@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<div style="text-align: center">
+    <h1>{{message}}</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mt-5">
+            <form name="register">
+                <fieldset>
+                    <legend class="text-center">
+                        Registration Form
+                   </legend>
+
+                   <small>All fields marked with an asterisk (<span class="text-danger">*</span>) are required.</small>
+
+                    <div class="form-group">
+                        <label for="fullname"><span class="req">* </span> Name: </label>
+                        <input ng-required="true" type="text" [(ngModel)]="user.fullname" name="fullname" id="fullname"
+                            class="form-control" maxlength="40" placeholder="Enter your Fullname..." />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email"><span class="req">* </span> Email: </label>
+                        <input class="form-control" type="text" [(ngModel)]="user.email" name="email" id="email" required
+                            placeholder="Enter valid email address" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience"><span class="req">* </span> Experience : </label>
+                        <input class="form-control" type="text" [(ngModel)]="user.experience" name="experience" id="experience"
+                            placeholder="Total year of experience" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="domain"><span class="req">* </span> Developer: </label>
+                        <input class="form-control" required type="text" [(ngModel)]="user.domain" name="domain"
+                            id="domain" placeholder="Fullstack/Backend/Developer" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country"><span class="req">* </span> Country: </label>
+                        <input class="form-control" required type="text" [(ngModel)]="user.country" name="country"
+                            id="country" placeholder="Bangladesh/India/Pakistan/UK/USA/UAE" />
+                    </div>
+
+                    <div class="form-group text-right">
+                        <input class="btn btn-success" type="submit" name="register" value="Register" (click)="userReg()">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div class="mt-3">
+        <a class="nav-link" routerLink="/home">Back to Home</a>
+    </div>
+</div>
